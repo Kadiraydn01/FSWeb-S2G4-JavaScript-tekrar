@@ -67,9 +67,8 @@ function CemberinCevresi(cemberinYaricapi) {
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 
-function CemberinAlani(cemberinYaricapi, pi) {
-  let piSayisi = pi;
-  const sonuc2 = piSayisi * Math.pow(cemberinYaricapi, 2);
+function CemberinAlani(yaricap, pi) {
+  const sonuc2 = pi * Math.pow(yaricap, 2);
 
   return sonuc2;
 }
@@ -99,9 +98,20 @@ var ucetambolunenler,
   tekraredensayilar;
 
 //3a çözümü
+let enKucuk = sayilar[0];
+let enBuyuk = sayilar[0];
 
-/* kodlar buraya */
+for (let i = 1; i < sayilar.length; i++) {
+  const sayi = sayilar[i];
 
+  if (sayi < enKucuk) {
+    enKucuk = sayi;
+  }
+
+  if (sayi > enBuyuk) {
+    enBuyuk = sayi;
+  }
+}
 // 3b çözümü:
 
 /* kodlar buraya */
