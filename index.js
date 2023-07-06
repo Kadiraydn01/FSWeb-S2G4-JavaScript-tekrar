@@ -88,6 +88,7 @@ function CemberinAlani(yaricap, pi) {
 	*/
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
+console.log(sayilar.length);
 
 var ucetambolunenler,
   enkucuk,
@@ -98,22 +99,28 @@ var ucetambolunenler,
   tekraredensayilar;
 
 //3a çözümü
-let enKucuk = sayilar[0];
-let enBuyuk = sayilar[0];
+var enbuyuk = sayilar[0];
+var enkucuk = sayilar[0];
 
 for (let i = 1; i < sayilar.length; i++) {
-  const sayi = sayilar[i];
-
-  if (sayi < enKucuk) {
-    enKucuk = sayi;
+  if (sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i];
   }
-
-  if (sayi > enBuyuk) {
-    enBuyuk = sayi;
+  if (sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i];
   }
 }
-// 3b çözümü:
 
+console.log("En Büyük Sayı: " + enbuyuk);
+console.log("En Küçük Sayı: " + enkucuk);
+// 3b çözümü:
+var ucetambolunenler = [];
+sayilar.forEach((sayi) => {
+  if (sayi % 3 == 0) {
+    ucetambolunenler.push(sayi);
+  }
+});
+console.log(ucetambolunenler);
 /* kodlar buraya */
 
 //3c çözümü:
@@ -130,7 +137,27 @@ for (let i = 1; i < sayilar.length; i++) {
 
 //3f çözümü
 
-/* kodlar buraya */
+var tekraredensayilar = [];
+
+var tekrarlar = {};
+
+for (let i = 0; i < sayilar.length; i++) {
+  const sayi = sayilar[i].toString();
+
+  if (tekrarlar[sayi]) {
+    tekrarlar[sayi]++;
+  } else {
+    tekrarlar[sayi] = 1;
+  }
+}
+
+for (const sayi in tekrarlar) {
+  const tekrarSayisi = tekrarlar[sayi];
+  const string = sayi + " sayısı " + tekrarSayisi + " kere tekrar edilmiştir";
+  tekraredensayilar.push(string);
+}
+
+console.log(tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
