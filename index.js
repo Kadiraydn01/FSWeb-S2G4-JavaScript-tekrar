@@ -121,15 +121,21 @@ sayilar.forEach((sayi) => {
   }
 });
 console.log(ucetambolunenler);
-/* kodlar buraya */
 
 //3c çözümü:
 
-/* kodlar buraya */
+var ucebolunenlerintoplami = ucetambolunenler.reduce(
+  (toplam, sayi) => toplam + sayi,
+  0
+);
+
+console.log(ucebolunenlerintoplami);
 
 //3d çözümü
 
-/* kodlar buraya */
+var besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
+
+console.log(besyuzdenkucuksayilar);
 
 //3e çözümü
 
